@@ -135,4 +135,12 @@
  */
 - (GPXTrackPoint *)newTrackpointWithLatitude:(CGFloat)latitude longitude:(CGFloat)longitude;
 
+/** Creates and returns a new trackpoint element.
+ @param latitude The latitude of the point.
+ @param longitude The longitude of the point.
+ @param altitude The altitude of the point.
+ @return A newly created trackpoint element.
+ */
+- (GPXTrackPoint *)newTrackpointWithLatitude:(CGFloat)latitude longitude:(CGFloat)longitude elevation:(CGFloat)elevation;
+
 @end

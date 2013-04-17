@@ -170,6 +170,21 @@
     return [tracksegment newTrackpointWithLatitude:latitude longitude:longitude];
 }
 
+- (GPXTrackPoint *)newTrackpointWithLatitude:(CGFloat)latitude longitude:(CGFloat)longitude elevation:(CGFloat)elevation
+{
+    GPXTrackSegment *tracksegment;
+    
+    // create a new segment if needed
+    if (_tracksegments.count == 0) {
+        [self newTrackSegment];
+    }
+    
+    // get latest segment
+    tracksegment = [_tracksegments lastObject];
+    
+    return [tracksegment newTrackpointWithLatitude:latitude longitude:longitude elevation:elevation];
+}
+
 
 #pragma mark - tag
 

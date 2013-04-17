@@ -58,6 +58,14 @@
     return trackpoint;
 }
 
+- (GPXTrackPoint *)newTrackpointWithLatitude:(CGFloat)latitude longitude:(CGFloat)longitude elevation:(CGFloat)elevation
+{
+    GPXTrackPoint *trackpoint = [GPXTrackPoint trackpointWithLatitude:latitude longitude:longitude];
+    trackpoint.elevation = elevation;
+    [self addTrackpoint:trackpoint];
+    return trackpoint;
+}
+
 - (void)addTrackpoint:(GPXTrackPoint *)trackpoint
 {
     if (trackpoint) {
